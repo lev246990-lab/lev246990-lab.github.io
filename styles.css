@@ -9,9 +9,13 @@ body {
 }
 
 /* Стили для заголовков */
-h1, h2 {
-    color: #2c3e50;
+h1{
+    color: red;
     margin-bottom: 15px;
+}
+h2{
+    color: blue;
+    margin-bottom: 17px;
 }
 
 /* Стили для списков */
@@ -20,19 +24,29 @@ ul {
     margin-left: 20px;
 }
 
-/* Разделы-карточки */
+/* Стили для отступов между разделами */
 .section {
-    background: white;
+    background: white;                            /* карточки на сером фоне */
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     margin-bottom: 30px;
 }
 
-/* Изображения */
+/* Стили для изображений (если будете добавлять) */
 img {
     max-width: 100%;
     height: auto;
     display: block;
     margin: 20px auto;
+}
+html {
+    scroll-behavior: smooth;
+}
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+a:hover {
+    color: #c0392b;
 }
