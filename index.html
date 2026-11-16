@@ -58,17 +58,37 @@
 		 <div>
 				<p>	исходный код</p>
 				<a href=2"https://github.com/lev246990-lab/lev246990-lab.github.io">github</a>
-    <script>
-        function pss() {
-    console.log("=== МАКСВЕЛЛ УСЛЫШАЛ ТЕБЯ ===");
-    console.log("🐱 псс... крутанулся для тебя");
-}
-import { createClient }
-from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
-const supabase = createClient(
-    'https://vtddelajbnlyxzonvlne.supabase.co',
-    'sb_publishable_ТВОЙ_КЛЮЧ'
-);
-    </script>
+    
+<script type="module">
+    import { createClient } from
+    'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+    const supabase = createClient(
+        'https://vtddelajbnlyxzonvlne.supabase.co',
+        'ТВОЙ_PUBLISHABLE_KEY'
+    );
+
+    window.pss = function () {
+        console.log("=== МАКСВЕЛЛ УСЛЫШАЛ ТЕБЯ ===");
+        console.log("🐱 псс... крутанулся для тебя");
+    };
+
+    async function loadData() {
+        const { data, error } = await supabase
+            .from('site_data')
+            .select('*')
+            .eq('key', 'welcome')
+            .single();
+
+        if (error) {
+            console.error('Ошибка Supabase:', error);
+            return;
+        }
+
+        console.log('Данные базы:', data.value);
+    }
+
+    loadData();
+</script>
 </body>
 </html>
