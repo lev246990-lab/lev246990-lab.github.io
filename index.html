@@ -63,6 +63,12 @@
     console.log("=== МАКСВЕЛЛ УСЛЫШАЛ ТЕБЯ ===");
     console.log("🐱 псс... крутанулся для тебя");
 }
+import { createClient }
+from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+const supabase = createClient(
+    'https://vtddelajbnlyxzonvlne.supabase.co',
+    'sb_publishable_ТВОЙ_КЛЮЧ'
+);
     </script>
 </body>
 </html>
